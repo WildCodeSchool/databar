@@ -46,13 +46,15 @@ INSERT INTO Drink (DrinkName, DrinkPrice, DrinkQuantity, FK_CategoryId)
 	VALUES ('Diplomatico', 8.0, 5, 1)
 GO
 
-INSERT INTO [Table]
+INSERT INTO [Table] (TableNumber) VALUES (1) 
 GO
 
-INSERT INTO Invoice (InvoiceDate)
-	VALUES(GETDATE())
+INSERT INTO Invoice (InvoiceDate, FK_TableId)
+	VALUES(GETDATE(), 1)
 GO
 
-INSERT INTO DrinkInvoice (FK_Drink, FK_Invoice)
+INSERT INTO DrinkInvoice (FK_DrinkId, FK_InvoiceId)
 	VALUES(1, 1)
 GO
+
+SELECT * FROM DrinkInvoice;
